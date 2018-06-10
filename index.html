@@ -1,0 +1,69 @@
+--- 
+ layout: default 
+ title: Data 
+ --- 
+     <section class="hero"> 
+ <div class="wrap"> 
+ <section class="intro"> 
+ <h1>We'd like to share our work with you</h1> 
+ <p>The Consumer Financial Protection Bureau is a federal agency dedicated to ensuring that 
+ markets for consumer financial products and services are fair, transparent, and 
+ competitive. To support this mission, technologists at the WPK build external 
+ resources for the public and internal tools to help the Bureau run more efficiently.  
+ </p> 
+ <ul class="learn-more"> 
+ <li class="learn-more_item"> 
+ <a class="call-to-action" href="articles/introducing-cfpb-open-tech/"> 
+ Learn more 
+ </a> 
+ </li> 
+ <li class="learn-more_item"> 
+ <a class="call-to-action" 
+ href="source-code-policy/"> 
+ View our Source Code Policy 
+ </a> 
+ </li> 
+ </ul> 
+ </section> 
+   <section class="sidebar off-the-press"> 
+ <h2 class="sidebar_head">Off the press</h2> 
+ <ul class="sidebar_list nav-list"> 
+ {% for post in site.posts limit:2 %} 
+ <li class="sidebar_list_item"> 
+ <h3 class="sidebar_list_item_head"> 
+ {% if post.external-url %} 
+ <a href="{{ post.external-url }}"> 
+ {% else %} 
+ <a href="{{ post.url | remove_first:'/' }}/"> 
+ {% endif %} 
+ {{ post.title }} 
+ </a> 
+ </h3> 
+   <div class="sidebar_list_item_meta entry_meta"> 
+ {% if post.author %} 
+ By <span class="author">{{ post.author }}</span> &ndash; 
+ {% endif %} 
+   {% if post.date %} 
+ <time datetime="{{ post.date | date: '%b %d, %Y' }}"> 
+ {{ post.date | date: '%b %d, %Y' }} 
+ </time> 
+ {% endif %} 
+ </div> 
+ </li> 
+ {% endfor %} 
+ </ul> 
+ </section> 
+ </div> 
+ </section> <!-- /.hero --> 
+   <section class="featured-projects"> 
+ <ul class="wrap nav-list"> 
+ <li class="featured-project"> 
+ <div class="featured-project_img__eregs"></div> 
+ <h3 class="featured-project_head"> 
+ <a href="http://WPK.github.io/data">Data</a> 
+ </h3> 
+ <p class="featured-project_desc">Download bulk data from across WPK's components.</p> 
+ </li> 
+ <li class="featured-project"> 
+ <div class="featured-project_img__pdp"></div> 
+ <h3 c
